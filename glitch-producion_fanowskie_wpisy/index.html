@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Glitch Production — Grupa WhatsApp</title>
+  <style>
+    :root {
+      --bg: #ffffff; 
+      --card: #e0c6ff; 
+      --table-bg: #f3e8ff; 
+      --table-header: #e0c6ff; 
+      --accent: #111827; 
+      --muted: #6b7280; 
+      --text: #111827; 
+    }
+    * { box-sizing: border-box }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color: #111827;
+      overflow-x: hidden;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px;
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      backdrop-filter: blur(6px);
+      position: relative;
+      z-index: 2;
+      background: #ffffff;
+    }
+    header img.logo {
+      width: 72px;
+      height: 72px;
+      object-fit: contain;
+    }
+    header .title { font-size: 20px; font-weight: 700 }
+    main { max-width: 1100px; margin: 28px auto; padding: 0 18px; position: relative; z-index: 2 }
+    .grid { display: grid; grid-template-columns: 1fr 360px; gap: 20px }
+    .card {
+      background: var(--card);
+      color: var(--text);
+      padding: 16px;
+      border-radius: 12px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    .muted { color: var(--muted); font-size: 13px }
+    .actions { display: flex; gap: 12px; flex-wrap: wrap }
+    .btn {
+      background: linear-gradient(90deg,var(--accent),#5b21b6);
+      border: none;
+      color: white;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .link {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 10px;
+      border-radius: 10px;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .posts { margin-top: 12px; display: grid; gap: 10px }
+    .post {
+      padding: 12px;
+      border-radius: 10px;
+      background: rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      color: var(--text);
+    }
+    table th, table td {
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px;
+      text-align: left;
+    }
+    table th {
+      background: rgba(255,255,255,0.1);
+    }
+    a { color: var(--accent); text-decoration: none }
+    a:hover { text-decoration: underline }
+    footer { margin-top: 22px; text-align: center; color: var(--muted); font-size: 13px; position: relative; z-index: 2 }
+    @media (max-width:900px){
+      .grid { grid-template-columns: 1fr }
+      .card { padding: 12px }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="glitch animated series.jpg" alt="Glitch Group logo" />
+    <div>
+      <div class="title">Glitch Production — oraz indie ANIMATED SERIES</div>
+      <div class="muted">Miejsce na wpisy, fabuły, linki do serii i do grupy</div>
+    </div>
+  </header>
+
+  <main>
+    <div class="grid">
+      <section>
+        <div class="card">
+          <h2>Wpisy i link do grupy WhatsApp</h2>
+          <p class="muted">Kliknij przycisk "Pokaż wpisy", aby wyświetlić wszystkie wpisy i opis.</p>
+          <div class="actions">
+            <button id="togglePosts" class="btn">Pokaż wpisy</button>
+            <a class="link" href="https://chat.whatsapp.com/K6Gi9yDAhZDJJAf9WNr78A?mode=wwt" target="_blank">Dołącz do grupy WhatsApp</a>
+			<a class="link" href="#" target="_blank">Dołącz do społecznosci WhatsApp</a>
+          </div>
+          <div id="postsContainer" class="posts" style="display:none;margin-top:14px"></div>
+        </div>
+
+        <!-- TABELKI SERIALI -->
+        <div class="card" style="margin-top:18px">
+          <h2>🎪 The Amazing Digital Circus</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>PILOT</td><td><a href="https://youtu.be/HwAPLk_sQ3w?si=Boj0-1-inSEjSbQX" target="_blank">Odcinek 1</a></td></tr>
+            <tr><td>Słodka Sprawa Syropu!</td><td><a href="https://youtu.be/4ofJpOEXrZs?si=g46dgOXdV4X9IAwr" target="_blank">Odcinek 2</a></td></tr>
+            <tr><td>Misterium Majętności Mildenhall</td><td><a href="https://youtu.be/bKjfw77cxeQ?si=FgDmoqpH2PMiW-NL" target="_blank">Odcinek 3</a></td></tr>
+            <tr><td>Fastfoodowa Maskarada</td><td><a href="https://youtu.be/Q9KWcWKo2T8?si=RMplO8045aU2fTG5" target="_blank">Odcinek 4</a></td></tr>
+            <tr><td>Bez tytułu</td><td><a href="https://youtu.be/L4p2gN2CzsA?si=0KiUJ-O3eI5Bi1oO" target="_blank">Odcinek 5</a></td></tr>
+            <tr><td>Zabawa z bronią</td><td><a href="https://youtu.be/mOvhHim78YA?si=Oj24s1eUOYx-5pTB" target="_blank">Odcinek 6</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>🤖 Murder Drones</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>PILOT</td><td><a href="https://youtu.be/mImFz8mkaHo?si=-t3XI6e2g68V_kXr" target="_blank">Odcinek 1</a></td></tr>
+            <tr><td>W rytmie serca</td><td><a href="https://youtu.be/7z8DO1KhPFo?si=l4mweRzzRs52fNBG" target="_blank">Odcinek 2</a></td></tr>
+            <tr><td>Bal wszystkich scietych</td><td><a href="https://youtu.be/djsJqNAGMuY?si=__LTFVgLFNMdkwjc" target="_blank">Odcinek 3</a></td></tr>
+            <tr><td>Czarny tabor</td><td><a href="https://youtu.be/63bUBEIhpNk?si=M4Xrcuh_xxcboJec" target="_blank">Odcinek 4</a></td></tr>
+            <tr><td>Dom Zły</td><td><a href="https://youtu.be/rk0HBqSqpgg?si=M4uXMzA1WktNxCTZ" target="_blank">Odcinek 5</a></td></tr>
+            <tr><td>Bez powrotu</td><td><a href="https://youtu.be/U7i6fi3z9Nk?si=KMVTRemp4NaxrYZ4" target="_blank">Odcinek 6</a></td></tr>
+            <tr><td>Ostatnia wieczerza</td><td><a href="https://youtu.be/EOqw86OGIB0?si=rIbM3IM2KNlHelCK" target="_blank">Odcinek 7</a></td></tr>
+            <tr><td>Wykładniczy Kres</td><td><a href="https://youtu.be/caR9ouipm8o?si=6ivw_MiJi_8RSdLP" target="_blank">Odcinek 8</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>🌆 The Glasslight District</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>PILOT</td><td><a href="https://youtu.be/IC8KsZniulw?si=5rwgagv42s4ymPJc" target="_blank">Odcinek 1</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>⚔️ Knights of Guinever</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>PILOT</td><td><a href="https://youtu.be/MCAdbUaMlAE?si=H_JOu9Ikp4X5S7WN" target="_blank">Odcinek 1</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>🏚️ RAMSHACKLE</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>PILOT(Dubbing PL)</td><td><a href="https://youtu.be/zIIZkjCzUwI?si=V98l9by4R32qj76B" target="_blank">Odcinek 1</a></td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h2>🌀 HOMESTUCK</h2>
+          <table>
+            <tr><th>Nazwa odcinka</th><th>Link</th></tr>
+            <tr><td>The Animated Pilot</td><td><a href="https://youtu.be/vQszKkN6Jb0?si=jSqYgPfengVL_gSG" target="_blank">Odcinek 1</a></td></tr>
+          </table>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+
+        <div class="card" style="margin-top:18px">
+          <h3>...</h3>
+          <table>
+            <tr><th>Opis</th></tr>
+            <tr><td>
+              jeszcze w procesie programowania...
+            </td></tr>
+          </table>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      &copy; Glitch Production — Strona fanowska
+    </footer>
+  </main>
+
+  <script>
+    const posts = [
+      "Opis:<br>To tutaj znajdziesz najnowsze informacje o indie animated series (niezależnych serialach animowanych) i glitch productions.<br>Znajdziesz tu na pewno informacje o:<br>- the amazing digital circus<br>- murder drones<br>- the glasslight district<br>- knights of guinever<br>- homestuck<br><br>I NIE TYLKO !<br>(jeszcze na pewno hazbin hotel, helluva boss i Ramshackle ale to rzadko)"
+    ];
+    document.getElementById("togglePosts").addEventListener("click", function() {
+      const container = document.getElementById("postsContainer");
+      if(container.style.display==="none"){
+        container.style.display="block";
+        container.innerHTML = posts.map(p=>`<div class="post">${p}</div>`).join("");
+        this.textContent="Ukryj wpisy";
+      } else {
+        container.style.display="none";
+        this.textContent="Pokaż wpisy";
+      }
+    });
+  </script>
+</body>
+</html>
+
